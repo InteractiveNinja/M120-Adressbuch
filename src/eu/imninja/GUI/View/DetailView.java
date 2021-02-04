@@ -55,18 +55,19 @@ public class DetailView extends GUI implements FieldNames {
 
         JPanel buttons = new JPanel(new GridLayout(0,1));
 
-        JButton saveButton = new JButton("Ändern");
-        JButton cancelButton = new JButton("Zurück");
+        JButton changeButton = new JButton("Ändern");
+        JButton backButton = new JButton("Zurück");
 
-        saveButton.addActionListener((e) ->{
+        changeButton.addActionListener((e) ->{
 
         });
 
-        cancelButton.addActionListener((e) ->{
+        backButton.addActionListener((e) ->{
+            controller.showListView();
         });
 
-        buttons.add(saveButton);
-        buttons.add(cancelButton);
+        buttons.add(changeButton);
+        buttons.add(backButton);
         add(buttons,BorderLayout.SOUTH);
 
 

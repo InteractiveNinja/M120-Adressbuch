@@ -12,7 +12,7 @@ public class GUI extends JFrame implements TextsMessages {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(300,400);
         setLocationRelativeTo(null);
-        setVisible(false);
+        setVisible(true);
     }
 
     public void setShown(boolean status) {

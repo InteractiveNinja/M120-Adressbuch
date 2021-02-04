@@ -12,9 +12,10 @@ public class ListView extends GUI {
     private Controller controller;
     private JList<String> list = new JList<>();
 
-    public ListView(String title, Controller controller) throws HeadlessException {
+    public ListView(String title, Controller controller,DefaultListModel<String> model) throws HeadlessException {
         super(title);
         this.controller = controller;
+        list.setModel(model);
         setElements();
     }
 
@@ -69,7 +70,4 @@ public class ListView extends GUI {
 
     }
 
-    public void fillList(DefaultListModel<String> model) {
-        list.setModel(model);
-    }
 }
