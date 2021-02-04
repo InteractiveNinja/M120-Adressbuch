@@ -20,8 +20,6 @@ public class Controller implements TextsMessages {
 
     public Controller() {
         this.model = new Model();
-        this.addView = new AddView(ADDTITLE,this);
-        this.detailView = new DetailView(DETAILTITLE,this,new Adresse());
         showListView();
     }
 
@@ -58,11 +56,11 @@ public class Controller implements TextsMessages {
 
 
     private void hideAll() {
-        views.forEach(gui -> {
-            if(gui != null) {
-                gui.dispose();
-            }
-        });
+
+        if(detailView != null) detailView.dispose();
+        if(addView != null) addView.dispose();
+        if(listView!= null) listView.dispose();
+
     }
 
 

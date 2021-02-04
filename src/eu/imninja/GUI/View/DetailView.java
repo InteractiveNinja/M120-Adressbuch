@@ -69,6 +69,7 @@ public class DetailView extends GUI implements FieldNames {
         buttons.add(changeButton);
         buttons.add(backButton);
         add(buttons,BorderLayout.SOUTH);
+        setVisible(true);
 
 
 

@@ -63,11 +63,7 @@ public class ListView extends GUI {
         buttons.add(addButton);
         buttons.add(removeButton);
         add(buttons,BorderLayout.SOUTH);
-
-
-
-
-
+        setVisible(true);
     }
 
 }

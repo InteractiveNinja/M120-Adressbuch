@@ -70,6 +70,7 @@ public class AddView extends GUI implements FieldNames {
         buttons.add(cancelButton);
         add(buttons,BorderLayout.SOUTH);
 
+        setVisible(true);
 
 
     }
