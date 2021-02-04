@@ -1,7 +1,6 @@
 package eu.imninja.GUI.View;
 
 import eu.imninja.GUI.Controller.Controller;
-import eu.imninja.GUI.Model.Model;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,11 +35,15 @@ public class ListView extends GUI {
         JButton removeButton = new JButton("Löschen");
 
         addButton.addActionListener((e) ->{
-            controller.addContacts();
+
+            controller.showAddView();
         });
 
         removeButton.addActionListener((e) ->{
-            controller.removeContact(list.getSelectedIndex());
+            if(list.getSelectedIndex() > 0) {
+                controller.removeContact(list.getSelectedIndex());
+
+            }
         });
 
         buttons.add(addButton);
