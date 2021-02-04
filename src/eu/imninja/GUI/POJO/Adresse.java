@@ -3,7 +3,7 @@ package eu.imninja.GUI.POJO;
 public class Adresse {
     private String vname;
     private String nname;
-    private int alter;
+    private String alter;
     private String strasse;
     private String plz;
     private String ort;
@@ -16,7 +16,7 @@ public class Adresse {
         this.nname = nname;
     }
 
-    public Adresse(String vname, String nname, int alter, String strasse, String plz, String ort, String telefonnummer, String mobilenummer, String email) {
+    public Adresse(String vname, String nname, String alter, String strasse, String plz, String ort, String telefonnummer, String mobilenummer, String email) {
         this.vname = vname;
         this.nname = nname;
         this.alter = alter;
@@ -44,11 +44,11 @@ public class Adresse {
         this.nname = nname;
     }
 
-    public int getAlter() {
+    public String getAlter() {
         return alter;
     }
 
-    public void setAlter(int alter) {
+    public void setAlter(String alter) {
         this.alter = alter;
     }
 

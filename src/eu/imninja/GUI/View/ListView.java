@@ -40,7 +40,7 @@ public class ListView extends GUI {
         });
 
         removeButton.addActionListener((e) ->{
-            if(list.getSelectedIndex() > 0) {
+            if(list.getSelectedIndex() > -1) {
                 controller.removeContact(list.getSelectedIndex());
 
             }

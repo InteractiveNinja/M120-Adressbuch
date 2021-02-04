@@ -12,6 +12,14 @@ public class Model {
     private DefaultListModel<String> list = new DefaultListModel<>();
     private ArrayList<Adresse> adresses = new ArrayList<>();
 
+
+    public Model() {
+
+        addToList(new Adresse("Hans","Meier"));
+        addToList(new Adresse("Hanfwes","Meier"));
+        addToList(new Adresse("Hanfewfs","Meier"));
+    }
+
     public void addToList(Adresse adresse) {
         adresses.add(adresse);
         list.addElement(adresse.getModelString());

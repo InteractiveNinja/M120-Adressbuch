@@ -17,15 +17,12 @@ public class Controller implements TextsMessages {
         this.model = new Model();
         this.listView = new ListView(LISTETITLE,this);
         this.addView = new AddView(ADDTITLE,this);
-        setupListView();
+        showListView();
     }
 
-    private void setupListView() {
+    public void showListView() {
 
-        model.addToList(new Adresse("Hans","Meier"));
-        model.addToList(new Adresse("Hanfwes","Meier"));
-        model.addToList(new Adresse("Hanfewfs","Meier"));
-
+        hideAll();
         listView.setShown(true);
         listView.fillList(model.getList());
     }
@@ -34,11 +31,19 @@ public class Controller implements TextsMessages {
         if(!model.removeFromList(index)) new ErrorGUI(DEFAULTERROR);
     }
 
+    public void addContact(Adresse adresse) {
+        model.addToList(adresse);
+    }
 
 
-    public void addContacts() {
-        listView.setShown(false);
+    public void showAddView() {
+        hideAll();
         addView.setShown(true);
+    }
+
+    private void hideAll() {
+        listView.setShown(false);
+        addView.setShown(false);
     }
 
 
