@@ -49,10 +49,20 @@ public class Model {
         }
     }
 
+    public void setAdresse(Adresse oldAdresse, Adresse newAdresse) {
+        adresses.set(adresses.indexOf(oldAdresse),newAdresse);
+        list.set(list.indexOf(oldAdresse.getModelString()),newAdresse.getModelString());
+    }
+
+    private Optional<Adresse> findAdresseByString(String search) {
+        return adresses.stream().filter(adresse -> adresse.getModelString().equals(search)).findFirst();
+
+    }
+
     public Optional<Adresse> findAdressByIndex(int index) {
         String search = list.get(index);
 
-        return adresses.stream().filter(adresse -> adresse.getModelString().equals(search)).findFirst();
+        return findAdresseByString(search);
 
     }
 

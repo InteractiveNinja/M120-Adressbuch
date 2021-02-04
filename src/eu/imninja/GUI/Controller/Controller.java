@@ -13,10 +13,10 @@ public class Controller implements TextsMessages {
 
     private ListView listView;
     private AddView addView;
+    private EditView editView;
     private DetailView detailView;
     private Model model;
 
-    private ArrayList<GUI> views = new ArrayList<>(Arrays.asList(listView,addView,detailView));
 
     public Controller() {
         this.model = new Model();
@@ -51,6 +51,15 @@ public class Controller implements TextsMessages {
     public void addContact(Adresse adresse) {
         model.addToList(adresse);
     }
+    public void setAdresse(Adresse oldAdresse,Adresse newAdresse) {
+        model.setAdresse(oldAdresse,newAdresse);
+    }
+
+    public void editAdress(Adresse adresse) {
+        hideAll();
+        editView = new EditView(EDITTITLE,this,adresse);
+
+    }
 
 
 
@@ -60,8 +69,10 @@ public class Controller implements TextsMessages {
         if(detailView != null) detailView.dispose();
         if(addView != null) addView.dispose();
         if(listView!= null) listView.dispose();
+        if(editView != null) editView.dispose();
 
     }
+
 
 
 }

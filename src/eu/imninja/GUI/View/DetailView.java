@@ -59,7 +59,7 @@ public class DetailView extends GUI implements FieldNames {
         JButton backButton = new JButton("Zurück");
 
         changeButton.addActionListener((e) ->{
-
+            controller.editAdress(adresse);
         });
 
         backButton.addActionListener((e) ->{
