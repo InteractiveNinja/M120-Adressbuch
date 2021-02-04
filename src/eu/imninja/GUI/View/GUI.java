@@ -11,6 +11,7 @@ public class GUI extends JFrame implements TextsMessages {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(300,400);
+        setIconImage(new ImageIcon(getClass().getClassLoader().getResource("eu/imninja/Images/icon.png")).getImage());
         setLocationRelativeTo(null);
         setVisible(false);
     }
