@@ -11,6 +11,9 @@ public class Adresse {
     private String mobilenummer;
     private String email;
 
+    public Adresse() {
+    }
+
     public Adresse(String vname, String nname) {
         this.vname = vname;
         this.nname = nname;

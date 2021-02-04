@@ -4,6 +4,8 @@ import eu.imninja.GUI.Controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ListView extends GUI {
 
@@ -43,6 +45,17 @@ public class ListView extends GUI {
             if(list.getSelectedIndex() > -1) {
                 controller.removeContact(list.getSelectedIndex());
 
+            }
+        });
+
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        list.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(e.getClickCount() >= 2) {
+                    controller.showDetailView(controller.findAdressById(list.getSelectedIndex()).get());
+                }
             }
         });
 

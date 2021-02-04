@@ -6,6 +6,7 @@ public interface TextsMessages {
     String DEFAULTTITLE = "Adressliste - ";
     String LISTETITLE = DEFAULTTITLE + "Liste";
     String ADDTITLE = DEFAULTTITLE + "Hinzufügen";
+    String DETAILTITLE = DEFAULTTITLE + "Informationen";
 
     //Meldungen
     String ALLGOOD = "Vorgang war erfolgreich!";

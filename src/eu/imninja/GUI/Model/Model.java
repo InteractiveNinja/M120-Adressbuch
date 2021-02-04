@@ -31,9 +31,9 @@ public class Model {
      * @return Erfolgreich?
      */
     public boolean removeFromList(int index) {
-        String search = list.get(index);
 
-        Optional<Adresse> ad = adresses.stream().filter(adresse -> adresse.getModelString().equals(search)).findFirst();
+        Optional<Adresse> ad = findAdressByIndex(index);
+
 
         if(ad.isPresent()) {
 
@@ -47,7 +47,12 @@ public class Model {
         } else {
             return false;
         }
+    }
 
+    public Optional<Adresse> findAdressByIndex(int index) {
+        String search = list.get(index);
+
+        return adresses.stream().filter(adresse -> adresse.getModelString().equals(search)).findFirst();
 
     }
 
