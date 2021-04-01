@@ -2,12 +2,17 @@ package eu.imninja.GUI.View;
 
 import eu.imninja.GUI.Controller.Controller;
 import eu.imninja.GUI.Messages.FieldNames;
+import eu.imninja.GUI.Messages.SpecialNames;
 import eu.imninja.GUI.POJO.Addresse;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
 
-public class AddView extends GUI implements FieldNames {
+public class AddView  extends GUI implements FieldNames, SpecialNames {
 
     private JTextField vname = new JTextField();
     private JTextField name = new JTextField();
@@ -75,7 +80,17 @@ public class AddView extends GUI implements FieldNames {
 
     }
 
-    private Addresse checks() {
+    private Addresse checks()  {
+        boolean isAName = Arrays.stream(specialNames).anyMatch((e) -> e.equalsIgnoreCase(vname.getText()));
+        if(isAName) {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO"));
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+
+
         return new Addresse(vname.getText(),name.getText(),alter.getText(),strasse.getText(),plz.getText(),ort.getText(),telefon.getText(),mobile.getText(),email.getText());
     }
 }
