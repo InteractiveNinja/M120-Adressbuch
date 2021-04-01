@@ -11,8 +11,8 @@ public class DetailView extends GUI implements FieldNames {
 
     private Controller controller;
     private Addresse addresse;
-    public DetailView(String title, Controller controller, Addresse addresse) throws HeadlessException {
-        super(title);
+    public DetailView(String title, Controller controller, Addresse addresse,Point location) throws HeadlessException {
+        super(title,location);
         this.controller = controller;
         this.addresse = addresse;
         setElements();
@@ -59,7 +59,7 @@ public class DetailView extends GUI implements FieldNames {
         JButton backButton = new JButton("Zurück");
 
         changeButton.addActionListener((e) ->{
-            controller.editAddress(addresse);
+            controller.showEditAdress(addresse);
         });
 
         backButton.addActionListener((e) ->{

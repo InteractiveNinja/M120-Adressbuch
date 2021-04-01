@@ -21,8 +21,8 @@ public class EditView extends GUI implements FieldNames {
 
     private Controller controller;
     private Addresse addresse;
-    public EditView(String title, Controller controller, Addresse addresse) throws HeadlessException {
-        super(title);
+    public EditView(String title, Controller controller, Addresse addresse,Point location) throws HeadlessException {
+        super(title,location);
         this.controller = controller;
         this.addresse = addresse;
         setElements();

@@ -20,8 +20,8 @@ public class AddView extends GUI implements FieldNames {
     private JTextField email = new JTextField();
 
     private Controller controller;
-    public AddView(String title, Controller controller) throws HeadlessException {
-        super(title);
+    public AddView(String title, Controller controller,Point location) throws HeadlessException {
+        super(title,location);
         this.controller = controller;
         setElements();
     }

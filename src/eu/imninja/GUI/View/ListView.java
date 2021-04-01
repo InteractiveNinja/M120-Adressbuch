@@ -13,8 +13,8 @@ public class ListView extends GUI {
     private JList<String> list = new JList<>();
     private JScrollPane scrollPane = new JScrollPane();
 
-    public ListView(String title, Controller controller) throws HeadlessException {
-        super(title);
+    public ListView(String title, Controller controller,Point location) throws HeadlessException {
+        super(title,location);
         this.controller = controller;
         setElements();
         loadModel();

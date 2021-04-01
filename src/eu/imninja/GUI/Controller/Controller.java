@@ -6,6 +6,7 @@ import eu.imninja.GUI.POJO.Addresse;
 import eu.imninja.GUI.View.*;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Controller implements TextsMessages {
 
@@ -14,7 +15,7 @@ public class Controller implements TextsMessages {
     private EditView editView;
     private DetailView detailView;
     private Model model;
-
+    private Point location;
 
     public Controller() {
         this.model = new Model();
@@ -24,7 +25,7 @@ public class Controller implements TextsMessages {
     public void showListView() {
 
         hideAll();
-        listView = new ListView(LISTETITLE,this);
+        listView = new ListView(LISTETITLE,this,location);
     }
 
 
@@ -34,11 +35,16 @@ public class Controller implements TextsMessages {
 
     public void showDetailView(Addresse addresse) {
         hideAll();
-        detailView = new DetailView(DETAILTITLE,this, addresse);
+        detailView = new DetailView(DETAILTITLE,this, addresse,location);
     }
     public void showAddView() {
         hideAll();
-        addView = new AddView(ADDTITLE,this);
+        addView = new AddView(ADDTITLE,this,location);
+    }
+    public void showEditAdress(Addresse addresse) {
+        hideAll();
+        editView = new EditView(EDITTITLE,this, addresse,location);
+
     }
 
     public Addresse getAddressByIndex(int index) {
@@ -58,21 +64,32 @@ public class Controller implements TextsMessages {
         model.setAdresse(oldAddresse, newAddresse);
     }
 
-    public void editAddress(Addresse addresse) {
-        hideAll();
-        editView = new EditView(EDITTITLE,this, addresse);
 
-    }
 
 
 
 
     private void hideAll() {
 
-        if(detailView != null) detailView.dispose();
-        if(addView != null) addView.dispose();
-        if(listView!= null) listView.dispose();
-        if(editView != null) editView.dispose();
+        if(detailView != null) {
+            location = detailView.getLocation();
+            detailView.dispose();
+
+        }
+        if(addView != null){
+            location = addView.getLocation();
+
+            addView.dispose();
+        }
+        if(listView!= null) {
+            location = listView.getLocation();
+
+            listView.dispose();
+        }
+        if(editView != null){
+            location = editView.getLocation();
+            editView.dispose();
+        }
 
     }
 
