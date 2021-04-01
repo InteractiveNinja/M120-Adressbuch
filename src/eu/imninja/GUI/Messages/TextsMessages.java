@@ -13,5 +13,5 @@ public interface TextsMessages {
     String ALLGOOD = "Vorgang war erfolgreich!";
 
     //Fehler Meldungen
-    String DEFAULTERROR = "Es ist ein unbekannter fehler Auftetretten, bitte versuchen sie es erneut";
+    String DEFAULTERROR = "Es ist ein unbekannter Fehler Aufgetretten, bitte versuchen sie es erneut";
 }

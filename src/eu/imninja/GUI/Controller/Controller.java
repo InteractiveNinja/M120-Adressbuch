@@ -5,9 +5,7 @@ import eu.imninja.GUI.Model.Model;
 import eu.imninja.GUI.POJO.Adresse;
 import eu.imninja.GUI.View.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Optional;
+import javax.swing.*;
 
 public class Controller implements TextsMessages {
 
@@ -26,7 +24,12 @@ public class Controller implements TextsMessages {
     public void showListView() {
 
         hideAll();
-        listView = new ListView(LISTETITLE,this,model.getList());
+        listView = new ListView(LISTETITLE,this);
+    }
+
+
+    public DefaultListModel<String> getListModel() {
+        return model.getListModel();
     }
 
     public void showDetailView(Adresse adresse) {
@@ -38,18 +41,18 @@ public class Controller implements TextsMessages {
         addView = new AddView(ADDTITLE,this);
     }
 
-    public Optional<Adresse> findAdressById(int index) {
-        return model.findAdressByIndex(index);
+    public Adresse getAdressByIndex(int index) {
+        return model.getAddressByIndex(index);
     }
 
 
 
-    public void removeContact(int index){
-        if(!model.removeFromList(index)) new ErrorGUI(DEFAULTERROR);
+    public void removeAdress(int index){
+        if(model.removeAddressByIndex(index)) new ErrorGUI(DEFAULTERROR);
     }
 
     public void addContact(Adresse adresse) {
-        model.addToList(adresse);
+        if(model.addToList(adresse)) new ErrorGUI(DEFAULTERROR);
     }
     public void setAdresse(Adresse oldAdresse,Adresse newAdresse) {
         model.setAdresse(oldAdresse,newAdresse);

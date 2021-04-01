@@ -13,11 +13,11 @@ public class ListView extends GUI {
     private JList<String> list = new JList<>();
     private JScrollPane scrollPane = new JScrollPane();
 
-    public ListView(String title, Controller controller,DefaultListModel<String> model) throws HeadlessException {
+    public ListView(String title, Controller controller) throws HeadlessException {
         super(title);
         this.controller = controller;
-        list.setModel(model);
         setElements();
+        loadModel();
     }
 
     private void setElements() {
@@ -46,7 +46,8 @@ public class ListView extends GUI {
 
         removeButton.addActionListener((e) ->{
             if(list.getSelectedIndex() > -1) {
-                controller.removeContact(list.getSelectedIndex());
+                controller.removeAdress(list.getSelectedIndex());
+                loadModel();
 
             }
         });
@@ -57,7 +58,7 @@ public class ListView extends GUI {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() >= 2) {
-                    controller.showDetailView(controller.findAdressById(list.getSelectedIndex()).get());
+                    controller.showDetailView(controller.getAdressByIndex(list.getSelectedIndex()));
                 }
             }
         });
@@ -66,6 +67,10 @@ public class ListView extends GUI {
         buttons.add(removeButton);
         add(buttons,BorderLayout.SOUTH);
         setVisible(true);
+    }
+
+    private void loadModel() {
+        list.setModel(controller.getListModel());
     }
 
 }
