@@ -15,9 +15,9 @@ public class Model {
 
     public Model() {
 
-        addToList(new Adresse("Hans","Meier"));
-        addToList(new Adresse("Hanfwes","Meier"));
-        addToList(new Adresse("Hanfewfs","Meier"));
+        for (int i = 1; i <= 50; i++) {
+            addToList(new Adresse("Hans", "Meier "  +i ));
+        }
     }
 
     public void addToList(Adresse adresse) {

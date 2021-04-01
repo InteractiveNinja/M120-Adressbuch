@@ -11,6 +11,7 @@ public class ListView extends GUI {
 
     private Controller controller;
     private JList<String> list = new JList<>();
+    private JScrollPane scrollPane = new JScrollPane();
 
     public ListView(String title, Controller controller,DefaultListModel<String> model) throws HeadlessException {
         super(title);
@@ -26,10 +27,11 @@ public class ListView extends GUI {
         //Titel des Programmes
         Label title = new Label("Adressliste");
         title.setAlignment(Label.CENTER);
+        scrollPane.setViewportView(list);
         add(title,BorderLayout.NORTH);
 
         //Liste wird hinzugefügt
-        add(list,BorderLayout.CENTER);
+        add(scrollPane,BorderLayout.CENTER);
 
         //Buttons werden hinzugefügt
         JPanel buttons = new JPanel(new GridLayout(0,1));
