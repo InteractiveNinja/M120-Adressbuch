@@ -2,7 +2,7 @@ package eu.imninja.GUI.View;
 
 import eu.imninja.GUI.Controller.Controller;
 import eu.imninja.GUI.Messages.FieldNames;
-import eu.imninja.GUI.POJO.Adresse;
+import eu.imninja.GUI.POJO.Addresse;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,11 +10,11 @@ import java.awt.*;
 public class DetailView extends GUI implements FieldNames {
 
     private Controller controller;
-    private Adresse adresse;
-    public DetailView(String title, Controller controller,Adresse adresse) throws HeadlessException {
+    private Addresse addresse;
+    public DetailView(String title, Controller controller, Addresse addresse) throws HeadlessException {
         super(title);
         this.controller = controller;
-        this.adresse = adresse;
+        this.addresse = addresse;
         setElements();
     }
 
@@ -24,30 +24,30 @@ public class DetailView extends GUI implements FieldNames {
         JPanel form = new JPanel(new GridLayout(0,2,10,10));
 
         form.add(new JLabel(NAMEFIELD));
-        form.add(new JLabel(adresse.getVname()));
+        form.add(new JLabel(addresse.getVname()));
         form.add(new JLabel(NACHNAMEFIELD));
-        form.add(new JLabel(adresse.getNname()));
+        form.add(new JLabel(addresse.getNname()));
 
         form.add(new JLabel(ALTERFIELD));
-        form.add(new JLabel(adresse.getAlter()));
+        form.add(new JLabel(addresse.getAlter()));
 
         form.add(new JLabel(STRASSEFIELD));
-        form.add(new JLabel(adresse.getStrasse()));
+        form.add(new JLabel(addresse.getStrasse()));
 
         form.add(new JLabel(PLZFIELD));
-        form.add(new JLabel(adresse.getPlz()));
+        form.add(new JLabel(addresse.getPlz()));
 
         form.add(new JLabel(ORTFIELD));
-        form.add(new JLabel(adresse.getOrt()));
+        form.add(new JLabel(addresse.getOrt()));
 
         form.add(new JLabel(TELEFIELD));
-        form.add(new JLabel(adresse.getTelefonnummer()));
+        form.add(new JLabel(addresse.getTelefonnummer()));
 
         form. add(new JLabel(MOBILETELEFIELD));
-        form.add(new JLabel(adresse.getMobilenummer()));
+        form.add(new JLabel(addresse.getMobilenummer()));
 
         form.add(new JLabel(EMAILFIELD));
-        form.add(new JLabel(adresse.getEmail()));
+        form.add(new JLabel(addresse.getEmail()));
 
 
 
@@ -59,7 +59,7 @@ public class DetailView extends GUI implements FieldNames {
         JButton backButton = new JButton("Zurück");
 
         changeButton.addActionListener((e) ->{
-            controller.editAdress(adresse);
+            controller.editAddress(addresse);
         });
 
         backButton.addActionListener((e) ->{

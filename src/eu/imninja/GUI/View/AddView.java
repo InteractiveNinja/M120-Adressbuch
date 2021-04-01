@@ -2,7 +2,7 @@ package eu.imninja.GUI.View;
 
 import eu.imninja.GUI.Controller.Controller;
 import eu.imninja.GUI.Messages.FieldNames;
-import eu.imninja.GUI.POJO.Adresse;
+import eu.imninja.GUI.POJO.Addresse;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,7 +58,7 @@ public class AddView extends GUI implements FieldNames {
         JButton cancelButton = new JButton("Abbrechen");
 
         saveButton.addActionListener((e) ->{
-            controller.addContact(checks());
+            controller.addAddress(checks());
             controller.showListView();
         });
 
@@ -75,7 +75,7 @@ public class AddView extends GUI implements FieldNames {
 
     }
 
-    private Adresse checks() {
-        return new Adresse(vname.getText(),name.getText(),alter.getText(),strasse.getText(),plz.getText(),ort.getText(),telefon.getText(),mobile.getText(),email.getText());
+    private Addresse checks() {
+        return new Addresse(vname.getText(),name.getText(),alter.getText(),strasse.getText(),plz.getText(),ort.getText(),telefon.getText(),mobile.getText(),email.getText());
     }
 }

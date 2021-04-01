@@ -1,6 +1,6 @@
 package eu.imninja.GUI.POJO;
 
-public class Adresse {
+public class Addresse {
     private String vname;
     private String nname;
     private String alter;
@@ -11,15 +11,15 @@ public class Adresse {
     private String mobilenummer;
     private String email;
 
-    public Adresse() {
+    public Addresse() {
     }
 
-    public Adresse(String vname, String nname) {
+    public Addresse(String vname, String nname) {
         this.vname = vname;
         this.nname = nname;
     }
 
-    public Adresse(String vname, String nname, String alter, String strasse, String plz, String ort, String telefonnummer, String mobilenummer, String email) {
+    public Addresse(String vname, String nname, String alter, String strasse, String plz, String ort, String telefonnummer, String mobilenummer, String email) {
         this.vname = vname;
         this.nname = nname;
         this.alter = alter;

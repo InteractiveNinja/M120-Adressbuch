@@ -46,7 +46,7 @@ public class ListView extends GUI {
 
         removeButton.addActionListener((e) ->{
             if(list.getSelectedIndex() > -1) {
-                controller.removeAdress(list.getSelectedIndex());
+                controller.removeAddress(list.getSelectedIndex());
                 loadModel();
 
             }
@@ -58,7 +58,7 @@ public class ListView extends GUI {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() >= 2) {
-                    controller.showDetailView(controller.getAdressByIndex(list.getSelectedIndex()));
+                    controller.showDetailView(controller.getAddressByIndex(list.getSelectedIndex()));
                 }
             }
         });
@@ -68,7 +68,6 @@ public class ListView extends GUI {
         add(buttons,BorderLayout.SOUTH);
         setVisible(true);
     }
-
     private void loadModel() {
         list.setModel(controller.getListModel());
     }

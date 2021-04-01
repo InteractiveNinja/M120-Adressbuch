@@ -2,7 +2,7 @@ package eu.imninja.GUI.View;
 
 import eu.imninja.GUI.Controller.Controller;
 import eu.imninja.GUI.Messages.FieldNames;
-import eu.imninja.GUI.POJO.Adresse;
+import eu.imninja.GUI.POJO.Addresse;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,11 +20,11 @@ public class EditView extends GUI implements FieldNames {
     private JTextField email = new JTextField();
 
     private Controller controller;
-    private Adresse adresse;
-    public EditView(String title, Controller controller,Adresse adresse) throws HeadlessException {
+    private Addresse addresse;
+    public EditView(String title, Controller controller, Addresse addresse) throws HeadlessException {
         super(title);
         this.controller = controller;
-        this.adresse = adresse;
+        this.addresse = addresse;
         setElements();
     }
 
@@ -33,38 +33,38 @@ public class EditView extends GUI implements FieldNames {
         JPanel form = new JPanel(new GridLayout(0,2,10,10));
 
         form.add(new JLabel(NAMEFIELD));
-        vname.setText(adresse.getVname());
+        vname.setText(addresse.getVname());
         form.add(vname);
         form.add(new JLabel(NACHNAMEFIELD));
-        name.setText(adresse.getNname());
+        name.setText(addresse.getNname());
 
         form.add(name);
         form.add(new JLabel(ALTERFIELD));
-        alter.setText(adresse.getAlter());
+        alter.setText(addresse.getAlter());
 
         form.add(alter);
         form.add(new JLabel(STRASSEFIELD));
-        strasse.setText(adresse.getStrasse());
+        strasse.setText(addresse.getStrasse());
 
         form.add(strasse);
         form.add(new JLabel(PLZFIELD));
-        plz.setText(adresse.getPlz());
+        plz.setText(addresse.getPlz());
 
         form.add(plz);
         form.add(new JLabel(ORTFIELD));
-        ort.setText(adresse.getOrt());
+        ort.setText(addresse.getOrt());
 
         form.add(ort);
         form.add(new JLabel(TELEFIELD));
-        telefon.setText(adresse.getTelefonnummer());
+        telefon.setText(addresse.getTelefonnummer());
 
         form.add(telefon);
         form. add(new JLabel(MOBILETELEFIELD));
-        mobile.setText(adresse.getMobilenummer());
+        mobile.setText(addresse.getMobilenummer());
 
         form.add(mobile);
         form.add(new JLabel(EMAILFIELD));
-        email.setText(adresse.getEmail());
+        email.setText(addresse.getEmail());
 
         form.add(email);
 
@@ -77,7 +77,7 @@ public class EditView extends GUI implements FieldNames {
         JButton cancelButton = new JButton("Abbrechen");
 
         saveButton.addActionListener((e) ->{
-            controller.setAdresse(adresse,checks());
+            controller.setAddress(addresse,checks());
             controller.showListView();
         });
 
@@ -94,7 +94,7 @@ public class EditView extends GUI implements FieldNames {
 
     }
 
-    private Adresse checks() {
-        return new Adresse(vname.getText(),name.getText(),alter.getText(),strasse.getText(),plz.getText(),ort.getText(),telefon.getText(),mobile.getText(),email.getText());
+    private Addresse checks() {
+        return new Addresse(vname.getText(),name.getText(),alter.getText(),strasse.getText(),plz.getText(),ort.getText(),telefon.getText(),mobile.getText(),email.getText());
     }
 }

@@ -2,7 +2,7 @@ package eu.imninja.GUI.Controller;
 
 import eu.imninja.GUI.Messages.TextsMessages;
 import eu.imninja.GUI.Model.Model;
-import eu.imninja.GUI.POJO.Adresse;
+import eu.imninja.GUI.POJO.Addresse;
 import eu.imninja.GUI.View.*;
 
 import javax.swing.*;
@@ -32,35 +32,35 @@ public class Controller implements TextsMessages {
         return model.getListModel();
     }
 
-    public void showDetailView(Adresse adresse) {
+    public void showDetailView(Addresse addresse) {
         hideAll();
-        detailView = new DetailView(DETAILTITLE,this,adresse);
+        detailView = new DetailView(DETAILTITLE,this, addresse);
     }
     public void showAddView() {
         hideAll();
         addView = new AddView(ADDTITLE,this);
     }
 
-    public Adresse getAdressByIndex(int index) {
+    public Addresse getAddressByIndex(int index) {
         return model.getAddressByIndex(index);
     }
 
 
 
-    public void removeAdress(int index){
+    public void removeAddress(int index){
         if(model.removeAddressByIndex(index)) new ErrorGUI(DEFAULTERROR);
     }
 
-    public void addContact(Adresse adresse) {
-        if(model.addToList(adresse)) new ErrorGUI(DEFAULTERROR);
+    public void addAddress(Addresse addresse) {
+        if(model.addAdressToList(addresse)) new ErrorGUI(DEFAULTERROR);
     }
-    public void setAdresse(Adresse oldAdresse,Adresse newAdresse) {
-        model.setAdresse(oldAdresse,newAdresse);
+    public void setAddress(Addresse oldAddresse, Addresse newAddresse) {
+        model.setAdresse(oldAddresse, newAddresse);
     }
 
-    public void editAdress(Adresse adresse) {
+    public void editAddress(Addresse addresse) {
         hideAll();
-        editView = new EditView(EDITTITLE,this,adresse);
+        editView = new EditView(EDITTITLE,this, addresse);
 
     }
 
