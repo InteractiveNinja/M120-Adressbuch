@@ -37,6 +37,7 @@ public class ListView extends GUI {
         JPanel buttons = new JPanel(new GridLayout(0,1));
 
         JButton addButton = new JButton("Hinzufügen");
+        JButton detailsChangeButton = new JButton("Details/Bearbeiten");
         JButton removeButton = new JButton("Löschen");
 
         addButton.addActionListener((e) ->{
@@ -63,7 +64,12 @@ public class ListView extends GUI {
             }
         });
 
+        detailsChangeButton.addActionListener(e ->{
+            controller.showDetailView(controller.getAddressByIndex(list.getSelectedIndex()));
+        });
+
         buttons.add(addButton);
+        buttons.add(detailsChangeButton);
         buttons.add(removeButton);
         add(buttons,BorderLayout.SOUTH);
         setVisible(true);
