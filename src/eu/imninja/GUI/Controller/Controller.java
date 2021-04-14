@@ -74,21 +74,23 @@ public class Controller implements TextsMessages {
         if(detailView != null) {
             location = detailView.getLocation();
             detailView.dispose();
+            detailView = null;
 
         }
         if(addView != null){
             location = addView.getLocation();
-
             addView.dispose();
+            addView = null;
         }
         if(listView!= null) {
             location = listView.getLocation();
-
             listView.dispose();
+            listView = null;
         }
         if(editView != null){
             location = editView.getLocation();
             editView.dispose();
+            editView = null;
         }
 
     }
